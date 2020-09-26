@@ -1,21 +1,19 @@
 <template>
-    <div class="footer">
+    <footer>
         <div class="container">
             footer
         </div>
-    </div>
+    </footer>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style lang="scss">
-.footer {
+@import "resources/sass/common";
+
+footer {
     background: #555;
 
     div {
-        padding: 24px 0;
+        padding: $space24 0;
     }
 }
 </style>

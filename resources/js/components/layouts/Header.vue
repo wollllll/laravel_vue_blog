@@ -1,22 +1,17 @@
 <template>
-    <header class="header shadow-sm">
+    <header class="shadow-sm">
         <div class="container">
             <router-link to="/" class="link-top">俺のポートフォリオ</router-link>
         </div>
     </header>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="scss">
 @import "resources/sass/common";
 
-.header {
+header {
     font-size: 26px;
+    background: #fff;
 
     div {
         padding: 24px 0;
