@@ -1,10 +1,12 @@
 <template>
     <div>
-        <Header/>
-        <main>
-            <slot></slot>
+        <Header></Header>
+        <main class="main">
+            <div class="container">
+                <slot></slot>
+            </div>
         </main>
-        <Footer/>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -19,3 +21,9 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+.main {
+    height: 100vh;
+}
+</style>

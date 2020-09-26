@@ -1,6 +1,6 @@
 <template>
     <Base>
-        <input class="form-control"/>
+dqwdqwdqwdqwd
     </Base>
 </template>
 
