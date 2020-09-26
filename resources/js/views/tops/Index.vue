@@ -1,9 +1,7 @@
 <template>
-    <div class="container">
-        <Base>
-            aa
-        </Base>
-    </div>
+    <Base>
+        aafw
+    </Base>
 </template>
 
 <script>

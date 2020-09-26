@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header p-5">
         <router-link to="/">俺のポートフォリオ</router-link>
     </header>
 </template>

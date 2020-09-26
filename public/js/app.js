@@ -1985,8 +1985,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38225,7 +38223,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
     [
       _c("Header"),
       _vm._v(" "),
@@ -38284,7 +38281,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "header",
-    { staticClass: "header" },
+    { staticClass: "header p-5" },
     [_c("router-link", { attrs: { to: "/" } }, [_vm._v("俺のポートフォリオ")])],
     1
   )
@@ -38311,12 +38308,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [_c("Base", [_vm._v("\n        aa\n    ")])],
-    1
-  )
+  return _c("Base", [_vm._v("\n    aafw\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
