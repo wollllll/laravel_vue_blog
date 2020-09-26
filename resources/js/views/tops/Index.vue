@@ -1,6 +1,6 @@
 <template>
     <Base>
-        aafw
+        <input class="form-control"/>
     </Base>
 </template>
 
@@ -11,6 +11,5 @@ export default {
     components: {
         Base
     },
-
 }
 </script>
