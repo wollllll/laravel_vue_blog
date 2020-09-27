@@ -1,11 +1,11 @@
 <template>
     <Base>
-        <div class="item-box">
-            <div class="item">
-                aaa
+        <div v-for="post in posts" class="item shadow-sm">
+            <div class="image">
+                gazou
             </div>
-            <div class="item">
-                aaa
+            <div class="detail">
+                {{ post.title }}
             </div>
         </div>
     </Base>
@@ -16,28 +16,44 @@ import Base from "../../components/layouts/Base";
 
 export default {
     components: {
-        Base
+        Base,
     },
+    data() {
+        return {
+            posts: [
+                {id: 1, title: 'title 1', content: 'title 1 da'},
+                {id: 2, title: 'title 2', content: 'title 2 da'},
+                {id: 3, title: 'title 3', content: 'title 3 da'},
+                {id: 4, title: 'title 4', content: 'title 4 da'}
+            ]
+        }
+    }
 }
 </script>
 
 <style lang="scss">
 @import "resources/sass/common";
 
-.item-box {
+.item {
     display: flex;
+    background: #fff;
+    border-radius: 8px;
+    width: 100%;
+    height: 190px;
+    margin-bottom: $space24;
+    color: $baseColor;
 
-    .item {
-        width: 50%;
-        border: 1px solid red;
+    .image {
+        width: 40%;
     }
 
-    .item:nth-child(odd) {
-        margin-right: $space16;
-    }
-
-    .item:nth-child(even) {
-        margin-left: $space16;
+    .detail {
+        width: 60%;
     }
 }
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
 </style>

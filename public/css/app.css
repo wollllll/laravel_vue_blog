@@ -10899,3 +10899,8 @@ a.text-dark:focus {
   }
 }
 
+
+.container {
+  width: 90% !important;
+}
+

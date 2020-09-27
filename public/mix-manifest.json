@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/../resources/sass/build/app.css": "/../resources/sass/build/app.css",
+    "/../resources/sass/build/common.css": "/../resources/sass/build/common.css",
     "/css/app.css": "/css/app.css"
 }

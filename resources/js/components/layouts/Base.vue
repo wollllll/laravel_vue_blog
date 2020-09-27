@@ -35,7 +35,7 @@ export default {
 
     .content {
         display: flex;
-        height: 100vh;
+        height: 100%;
         margin-top: $space48;
         margin-bottom: $space48;
         padding: 0;
