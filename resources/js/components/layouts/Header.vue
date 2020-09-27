@@ -1,7 +1,7 @@
 <template>
     <header class="shadow-sm">
         <div class="container">
-            <router-link to="/" class="link-top">俺のポートフォリオ</router-link>
+            <router-link :to="{name: 'TopIndex'}" class="link-top">俺のポートフォリオ</router-link>
         </div>
     </header>
 </template>

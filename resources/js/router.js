@@ -8,7 +8,8 @@ Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 
 // コンポーネントをインポート
-import TopIndex from './views/tops/Index.vue';
+import TopIndex from "./views/tops/Index";
+import PostShow from "./views/posts/Show";
 
 const DEFAULT_TITLE = '俺のポートフォリオ | ';
 
@@ -18,10 +19,16 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: TopIndex,
+            name: 'TopIndex',
             component: TopIndex,
             meta: {title: 'TOP'}
         },
+        {
+            path: '/:id',
+            name: 'PostShow',
+            component: PostShow,
+            meta: {title: '詳細'}
+        }
     ]
 });
 

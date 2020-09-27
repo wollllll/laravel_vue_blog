@@ -7,6 +7,7 @@
             <div class="detail">
                 {{ post.title }}
             </div>
+            <router-link :to="{name: 'PostShow', params: {id: 1}}">aaa</router-link>
         </div>
     </Base>
 </template>
