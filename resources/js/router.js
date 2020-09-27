@@ -27,6 +27,9 @@ const router = new VueRouter({
             path: '/:id',
             name: 'PostShow',
             component: PostShow,
+            props: route => {
+                return {id: route.params.id};
+            },
             meta: {title: '詳細'}
         }
     ]
