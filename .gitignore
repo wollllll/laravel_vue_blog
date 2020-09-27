@@ -11,6 +11,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/resources/sass/build
 /public/css
 /public/js
+/resources/sass/build
