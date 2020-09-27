@@ -1,6 +1,6 @@
 <template>
     <Base>
-        syousai
+        {{ slug }}
     </Base>
 </template>
 
@@ -9,14 +9,11 @@ import Base from "../../components/layouts/Base";
 
 export default {
     props: [
-        'id'
+        'slug'
     ],
     components: {
         Base
     },
-    created() {
-        console.log(this.id);
-    }
 }
 </script>
 

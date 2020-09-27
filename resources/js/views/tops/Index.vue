@@ -7,12 +7,13 @@
             <div class="detail">
                 {{ post.title }}
             </div>
-            <router-link :to="{name: 'PostShow', params: {id: 1}}">aaa</router-link>
+            <router-link :to="{name: 'PostShow', params: {slug: post.slug}}">aaa</router-link>
         </div>
     </Base>
 </template>
 
 <script>
+import api from "../../api";
 import Base from "../../components/layouts/Base";
 
 export default {
@@ -21,13 +22,24 @@ export default {
     },
     data() {
         return {
-            posts: [
-                {id: 1, title: 'title 1', content: 'title 1 da'},
-                {id: 2, title: 'title 2', content: 'title 2 da'},
-                {id: 3, title: 'title 3', content: 'title 3 da'},
-                {id: 4, title: 'title 4', content: 'title 4 da'}
-            ]
+            posts: [],
         }
+    },
+    created() {
+        this.getAll();
+    },
+    methods: {
+        async getAll() {
+            await api.posts.getAll()
+                .then(response => {
+                    this.posts = response.data.posts;
+                    console.log('ajax success');
+                })
+                .catch(error => {
+                    console.log(error);
+                    console.log('ajax fail');
+                });
+        },
     }
 }
 </script>

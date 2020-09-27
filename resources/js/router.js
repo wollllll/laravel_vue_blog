@@ -24,11 +24,11 @@ const router = new VueRouter({
             meta: {title: 'TOP'}
         },
         {
-            path: '/:id',
+            path: '/:slug',
             name: 'PostShow',
             component: PostShow,
             props: route => {
-                return {id: route.params.id};
+                return {slug: route.params.slug};
             },
             meta: {title: '詳細'}
         }
