@@ -13,7 +13,7 @@ class PostTableSeeder extends Seeder
     {
         $inserts = [];
 
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 1; $i < 20; $i++) {
             $inserts[] = [
                 'slug' =>  sprintf('タイトル%dです', $i),
                 'title' => sprintf('タイトル%dです', $i),

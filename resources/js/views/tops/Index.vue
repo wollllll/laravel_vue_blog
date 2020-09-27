@@ -1,6 +1,6 @@
 <template>
     <Base>
-        <div v-for="post in posts" class="item shadow-sm">
+        <div v-for="post in posts.data" class="item shadow-sm">
             <div class="image">
                 gazou
             </div>
@@ -9,6 +9,7 @@
             </div>
             <router-link :to="{name: 'PostShow', params: {slug: post.slug}}">aaa</router-link>
         </div>
+        <button @click="getMorePosts" v-if="currentPage != posts.last_page" type="button">もっと見る</button>
     </Base>
 </template>
 
@@ -22,7 +23,8 @@ export default {
     },
     data() {
         return {
-            posts: [],
+            posts: {},
+            currentPage: 1
         }
     },
     created() {
@@ -40,6 +42,20 @@ export default {
                     console.log('ajax fail');
                 });
         },
+        async getMorePosts() {
+            await api.posts.getAll(this.posts.current_page + 1)
+                .then(response => {
+                    const posts = response.data.posts;
+
+                    this.posts.data = this.posts.data.concat(posts.data);
+                    this.currentPage = posts.current_page
+                    console.log('ajax success');
+                })
+                .catch(error => {
+                    console.log(error);
+                    console.log('ajax fail');
+                });
+        }
     }
 }
 </script>

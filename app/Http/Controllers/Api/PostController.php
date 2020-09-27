@@ -12,7 +12,7 @@ class PostController extends Controller
     public function getAll()
     {
         return response([
-            'posts' => Post::get()
+            'posts' => Post::paginate(6)
         ]);
     }
 

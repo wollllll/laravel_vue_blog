@@ -24,12 +24,17 @@ export default {
     },
     created() {
         this.getPostBySlug();
+        console.log(this.post);
     },
     methods: {
         async getPostBySlug() {
             await api.posts.getPostBySlug(this.slug)
                 .then(response => {
-                    this.post = response.data.post;
+                    if (response.data.post) {
+                        this.post = response.data.post;
+                    } else {
+                        this.$router.push('/error/404');
+                    }
                     console.log('ajax success');
                 })
                 .catch(error => {

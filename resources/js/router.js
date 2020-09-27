@@ -10,6 +10,7 @@ Vue.use(BootstrapVue);
 // コンポーネントをインポート
 import TopIndex from "./views/tops/Index";
 import PostShow from "./views/posts/Show";
+import NotFound from "./components/NotFound";
 
 const DEFAULT_TITLE = '俺のポートフォリオ | ';
 
@@ -27,10 +28,14 @@ const router = new VueRouter({
             path: '/:slug',
             name: 'PostShow',
             component: PostShow,
-            props: route => {
-                return {slug: route.params.slug};
-            },
-            meta: {title: '詳細'}
+            props: true,
+            meta: {title: '詳細'},
+        },
+        {
+            path: '/error/404',
+            name: 'NotFound',
+            component: NotFound,
+            meta: {title: '404'},
         }
     ]
 });

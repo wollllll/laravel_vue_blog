@@ -1,6 +1,10 @@
 export default {
     posts: {
-        getAll: () => axios.get('/api/posts/getAll'),
+        getAll: (page) => axios.get('/api/posts/getAll', {
+            params: {
+                page
+            }
+        }),
         getPostBySlug: slug => axios.get('/api/posts/getPostBySlug', {
             params: {
                 slug
