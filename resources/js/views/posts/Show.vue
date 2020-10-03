@@ -3,6 +3,14 @@
         <p>{{ post.id }}</p>
         <p>{{ post.title }}</p>
         <p>{{ post.content }}</p>
+        <div class="d-flex">
+            <router-link v-if="prevPost" :to="{name: 'PostShow', params: {slug: prevPost.slug}}">
+                前の記事
+            </router-link>
+            <router-link v-if="nextPost" :to="{name: 'PostShow', params: {slug: nextPost.slug}}">
+                次の記事
+            </router-link>
+        </div>
     </Base>
 </template>
 
@@ -20,18 +28,23 @@ export default {
     data() {
         return {
             post: {},
+            prevPost: {},
+            nextPost: {}
         }
     },
     created() {
         this.getPostBySlug();
-        console.log(this.post);
     },
     methods: {
         async getPostBySlug() {
             await api.posts.getPostBySlug(this.slug)
                 .then(response => {
-                    if (response.data.post) {
-                        this.post = response.data.post;
+                    const data = response.data;
+
+                    if (data.post) {
+                        this.post = data.post;
+                        this.prevPost = data.prevPost;
+                        this.nextPost = data.nextPost;
                     } else {
                         this.$router.push('/error/404');
                     }

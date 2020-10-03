@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -18,8 +19,14 @@ class PostController extends Controller
 
     public function getPostBySlug(Request $request)
     {
+        $post = Post::where('slug', Arr::get($request->all(), 'slug'))->first();
+        $prevPost = Post::where('id', '<', $post->id)->orderBy('id', 'desc')->limit('1')->first();
+        $nextPost = Post::where('id', '>', $post->id)->orderBy('id')->limit('1')->first();
+
         return response([
-            'post' => Post::where('slug', Arr::get($request->all(), 'slug'))->first()
+            'post' => $post,
+            'prevPost' => $prevPost,
+            'nextPost' => $nextPost
         ]);
     }
 }
