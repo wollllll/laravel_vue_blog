@@ -9,7 +9,16 @@
             </div>
             <router-link :to="{name: 'PostShow', params: {slug: post.slug}}">aaa</router-link>
         </div>
-        <button @click="getMorePosts" v-if="currentPage != posts.last_page" type="button">もっと見る</button>
+        <div class="text-center">
+            <button
+                @click="getMorePosts"
+                v-if="currentPage != posts.last_page"
+                type="button"
+                class="btn btn-primary"
+            >
+                もっと見る
+            </button>
+        </div>
     </Base>
 </template>
 

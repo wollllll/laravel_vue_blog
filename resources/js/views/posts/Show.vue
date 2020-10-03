@@ -3,14 +3,14 @@
         <p>{{ post.id }}</p>
         <p>{{ post.title }}</p>
         <p>{{ post.content }}</p>
-        <div class="d-flex">
-            <router-link v-if="prevPost" :to="{name: 'PostShow', params: {slug: prevPost.slug}}">
-                前の記事
-            </router-link>
-            <router-link v-if="nextPost" :to="{name: 'PostShow', params: {slug: nextPost.slug}}">
-                次の記事
-            </router-link>
-        </div>
+<!--        <div class="d-flex">-->
+<!--            <router-link v-if="prevPost" :to="{name: 'PostShow', params: {slug: prevPost.slug}}">-->
+<!--                前の記事-->
+<!--            </router-link>-->
+<!--            <router-link v-if="nextPost" :to="{name: 'PostShow', params: {slug: nextPost.slug}}">-->
+<!--                次の記事-->
+<!--            </router-link>-->
+<!--        </div>-->
     </Base>
 </template>
 
